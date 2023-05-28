@@ -10,7 +10,7 @@ public class User {
 
     }
 
-    public User(String user,String description, int id,boolean followed){
+    public User(String user,String description){
         this.name=user;
         this.description=description;
         this.id=id;

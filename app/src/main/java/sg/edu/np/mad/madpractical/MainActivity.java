@@ -16,25 +16,27 @@ public class MainActivity extends AppCompatActivity {
 
     private Button followButton;
     private boolean isFollowing = false;
-
     private Button messageButton;
-
     private TextView header;
+    private TextView username;
+    private TextView description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        header = findViewById(R.id.textView3);
+        username = findViewById(R.id.textView3);
+        description = findViewById(R.id.textView4);
         messageButton = findViewById(R.id.button2);
         followButton = findViewById(R.id.btnFollow);
 
-        followButton = findViewById(R.id.btnFollow);
-
         Intent receivingEnd = getIntent();
-        String message = receivingEnd.getStringExtra("Key");
-        header.setText("MAD " + message);
+        String username = receivingEnd.getStringExtra("USERNAME");
+        String description = receivingEnd.getStringExtra("DESCRIPTION");
+
+        this.username.setText(username);
+        this.description.setText(description);
         followButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
